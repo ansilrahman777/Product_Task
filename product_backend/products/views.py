@@ -3,7 +3,7 @@ from rest_framework import generics, status
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
 from rest_framework.permissions import AllowAny
-from .serializers import RegisterSerializer, LoginSerializer, ProductSerializer
+from .serializers import RegisterSerializer, LoginSerializer
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
 from .models import Product
