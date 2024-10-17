@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import bg from "./../assets/bg1.jpg";
+import { toast } from "react-toastify";
+
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -14,6 +16,9 @@ const Login = () => {
       const response = await axios.post("http://127.0.0.1:8000/api/login/", {
         username,
         password,
+      });
+      toast.success("Login successful.", {
+        autoClose: 3000,
       });
       localStorage.setItem("token", response.data.token);
       window.location.href = "/products";

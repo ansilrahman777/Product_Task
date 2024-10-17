@@ -98,10 +98,10 @@ const Home = () => {
               </p>
               <div className="md:flex-row flex-col flex gap-4">
                 <button className="inline-block text-base font-medium px-12 py-2 bg-accent-400 rounded-lg cursor-pointer">
-                  En savoir plus
+                  Explore
                 </button>
                 <button className="inline-block text-base font-medium px-12 py-2 border border-accent-400 rounded-lg text-accent-400 cursor-pointer bg-gray-50/10 backdrop-blur-3xl">
-                  Nos Horaires
+                  Click me
                 </button>
               </div>
             </div>

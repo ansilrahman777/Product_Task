@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import bg from "./../assets/bg1.jpg";
+import { toast } from "react-toastify";
+import "ldrs";
 
 
 const Register = () => {
@@ -16,12 +18,12 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      setError("Passwords do not match");
+      setError("Passwords do not match.");
       return;
     }
 
     try {
-      await axios.post("http://127.0.0.1:8000/api/register/", {
+      const response = await axios.post("http://127.0.0.1:8000/api/register/", {
         username,
         password,
         password2,
@@ -29,9 +31,17 @@ const Register = () => {
         first_name: firstName,
         last_name: lastName,
       });
-      window.location.href = "/login";
+      toast.success("Registration successful.", {
+        autoClose: 3000,
+      });
+      window.location.href = "/login";  
     } catch (error) {
-      setError("Registration failed. Please try again.");
+      if (error.response && error.response.data) {
+        const errorMessage = Object.values(error.response.data)[0]; 
+        setError(errorMessage);
+      } else {
+        setError("Registration failed. Please try again.");
+      }
     }
   };
 
@@ -39,8 +49,7 @@ const Register = () => {
     <div
       className="bg-no-repeat bg-cover bg-center relative"
       style={{
-        backgroundImage:
-          `url(${bg})`,
+        backgroundImage: `url(${bg})`,
       }}
     >
       <header className="w-dvw absolute top-0 left-1/2 -translate-x-1/2 z-[1000] py-4">
@@ -73,8 +82,6 @@ const Register = () => {
                 <circle cx="369" cy="246" r="50" fill="currentColor"></circle>
               </svg>
             </a>
-            <div className="flex-1 relative hidden md:flex items-center justify-center">
-            </div>
           </nav>
         </div>
       </header>
