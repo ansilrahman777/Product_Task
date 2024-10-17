@@ -5,7 +5,6 @@ import bg from "./../assets/bg1.jpg";
 import { toast } from "react-toastify";
 import "ldrs";
 
-
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -34,10 +33,10 @@ const Register = () => {
       toast.success("Registration successful.", {
         autoClose: 3000,
       });
-      window.location.href = "/login";  
+      window.location.href = "/login";
     } catch (error) {
       if (error.response && error.response.data) {
-        const errorMessage = Object.values(error.response.data)[0]; 
+        const errorMessage = Object.values(error.response.data)[0];
         setError(errorMessage);
       } else {
         setError("Registration failed. Please try again.");
@@ -55,33 +54,13 @@ const Register = () => {
       <header className="w-dvw absolute top-0 left-1/2 -translate-x-1/2 z-[1000] py-4">
         <div className="max-w-[120rem] text-gray-50 px-6 md:px-8 lg:px-10">
           <nav className="w-full flex flex-row items-center font-sans">
-            <a className="text-gray-50" href="/">
-              <svg
-                className="h-8 w-8"
-                viewBox="0 0 512 512"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="94"
-                  y="81"
-                  width="40"
-                  height="350"
-                  fill="currentColor"
-                ></rect>
-                <rect
-                  x="264"
-                  y="81"
-                  width="40"
-                  height="350"
-                  fill="currentColor"
-                ></rect>
-                <circle cx="199" cy="131" r="50" fill="currentColor"></circle>
-                <circle cx="199" cy="246" r="50" fill="currentColor"></circle>
-                <circle cx="369" cy="131" r="50" fill="currentColor"></circle>
-                <circle cx="369" cy="246" r="50" fill="currentColor"></circle>
-              </svg>
-            </a>
+            <Link to="/" className="text-gray-50">
+              <div class="flex flex-wrap justify-center">
+                <button class="bg-indigo-500 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-4 py-2 m-2">
+                  QuickList
+                </button>
+              </div>
+            </Link>
           </nav>
         </div>
       </header>

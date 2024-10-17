@@ -7,40 +7,16 @@ const Home = () => {
       <header className="w-dvw absolute top-0 left-1/2 -translate-x-1/2 z-[1000] py-4">
         <div className="max-w-[120rem] text-gray-50 px-6 md:px-8 lg:px-10">
           <nav className="w-full flex flex-row items-center font-sans">
-            {/* Link to Home */}
             <Link to="/" className="text-gray-50">
-              <svg
-                className="h-8 w-8"
-                viewBox="0 0 512 512"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="94"
-                  y="81"
-                  width="40"
-                  height="350"
-                  fill="currentColor"
-                ></rect>
-                <rect
-                  x="264"
-                  y="81"
-                  width="40"
-                  height="350"
-                  fill="currentColor"
-                ></rect>
-                <circle cx="199" cy="131" r="50" fill="currentColor"></circle>
-                <circle cx="199" cy="246" r="50" fill="currentColor"></circle>
-                <circle cx="369" cy="131" r="50" fill="currentColor"></circle>
-                <circle cx="369" cy="246" r="50" fill="currentColor"></circle>
-              </svg>
+              <div class="flex flex-wrap justify-center">
+                <button class="bg-indigo-500 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-4 py-2 m-2">
+                  QuickList
+                </button>
+              </div>
             </Link>
-
-            {/* Products Navigation */}
             <div className="flex-1 relative hidden md:flex items-center justify-center">
               <ul className="mx-auto inline-flex gap-6 text-sm font-light">
                 <li>
-                  {/* Link to Product Page */}
                   <Link
                     to="/products"
                     className="font-bold relative after:h-px after:content-[''] after:w-full after:absolute after:top-full after:bg-accent-500 after:left-0 after:translate-y-1"
@@ -51,7 +27,6 @@ const Home = () => {
               </ul>
             </div>
 
-            {/* Login and Register Links */}
             <ul className="absolute right-0">
               <li className="relative">
                 <div className="hidden md:flex items-center justify-center">
@@ -92,9 +67,9 @@ const Home = () => {
                 Une bonne santé passe par le sport
               </h1>
               <p className="max-w-[30rem] font-light ml-4 before:content-[''] relative before:absolute before:w-px before:h-full before:left-0 before:top-0 before:-translate-x-4 before:bg-accent-500 md:text-base text-sm">
-                Lorem Ipsum is simply dummy text of the printing and
-                typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s
               </p>
               <div className="md:flex-row flex-col flex gap-4">
                 <button className="inline-block text-base font-medium px-12 py-2 bg-accent-400 rounded-lg cursor-pointer">
